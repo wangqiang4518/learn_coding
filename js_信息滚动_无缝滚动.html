@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>无缝滚动</title>
+</head>
+<body>
+	<div id=demo style="overflow:hidden;height:120px;width:200px;background:#009900;color:#006600">   
+		<div id=demo1 valign=top>  
+			<p>aaa</p>  
+			<p>bbb</p>  
+			<p>ccc</p>  
+			<p>ddd</p>  
+			<p>eee</p>  
+			<p>fff</p>  
+		</div>  
+		<div id=demo2 valign=top></div>  
+	</div>  
+	<script>  
+		var speed=100; 
+		demo2.innerHTML=demo1.innerHTML//克隆demo1为demo2  
+		function Marquee(){//scrollTop为滚动条滚动的距离
+			if(demo.scrollTop>=demo1.offsetHeight){
+				demo.scrollTop=0;//demo跳到最顶端  
+			}else{//当滚动至demo1与demo2交界时  
+				demo.scrollTop++;  //如果是横向的 将 所有的 height top 改成 width left  
+			}  
+		}  
+		var MyMar=setInterval(Marquee,speed);//设置定时器 
+		demo.onmouseover=function() {clearInterval(MyMar)};//鼠标移上时清除定时器达到滚动停止的目的  
+		demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)};//鼠标移开时重设定时器  
+	</script> 
+</body>
+</html>

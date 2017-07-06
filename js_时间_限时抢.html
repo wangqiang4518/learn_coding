@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>限时抢</title>
+	<script type="text/javascript">
+	    window.onload = function(){
+	    	showTime();
+	    }
+
+	    function showTime(){
+	    	var endtime = new Date("2017/5/17,12:20:12");
+		    var nowtime = new Date();
+		    //parseInt取整数
+		    var lefttime = parseInt(endtime.getTime()-nowtime.getTime())/1000;
+		    var d = parseInt(lefttime/(24*60*60));
+		    var h = parseInt(lefttime/(60*60)%24);
+		    var m = parseInt(lefttime/60%60);
+		    var s = parseInt(lefttime%60);
+		    
+		    if (lefttime<=0) {
+		    	document.getElementById("lefttime").innerHTML = "团购结束";
+		    } else {
+		    	document.getElementById("lefttime").innerHTML = d+"天"+h+"小时"+m+"分钟"+s+"秒";
+		    }
+		    setTimeout(showTime,500);
+	    }
+		
+	</script>
+</head>
+<body>
+	<div><span id="lefttime"> </span></div>
+</body>
+</html>
