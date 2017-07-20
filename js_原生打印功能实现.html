@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<title>债券转让协议</title>
+	</head>
+	<style type="text/css">
+		p {
+			text-align: justify;
+			font-size: 14px;
+		}
+	</style>
+
+	<body>
+		<div class="container" id="divPrint">
+			<p class="text-right">合同编号：<span id="">$$$$$$$</span></p>
+			<h4 class="text-center">我是名字</h4>
+			<p>本《债权转让协议》（以下简称“本协议”）由以下各方于<span id="">2016-01-25</span>签订。</p>
+			<p><b>甲方：（“债权受让方”）</b></p>
+			<table class="table table-bordered">
+				<tr>
+					<td>姓名</td>
+					<td>身份证号</td>
+				</tr>
+				<tr>
+					<td>Data</td>
+					<td>Data</td>
+				</tr>
+			</table>
+			<p><b>乙方：（“债权出让方”）</b></p>
+			<table class="table table-bordered">
+				<tr>
+					<td>姓名</td>
+					<td>身份证号</td>
+				</tr>
+				<tr>
+					<td>Data</td>
+					<td>Data</td>
+				</tr>
+			</table>
+			<p><b>丙方：（“债务人”）</b></p>
+			<table class="table table-bordered">
+				<tr>
+					<td>姓名</td>
+					<td>身份证号</td>
+				</tr>
+				<tr>
+					<td>Data</td>
+					<td>Data</td>
+				</tr>
+			</table>
+			<p><b>丁方：<span>北京快乐时代科技发展有限公司（“担保人”）</span></b></p>
+			<p>营业执照：<span>11010517011206</span></p>
+			<p>法定代表人：<span>罗敏</span></p>
+			<p><b>戊方：北京钱得乐科技有限公司（“居间人”）</b></p>
+			<p>15层B-1508-050号</p>
+			<p>联系电话：<span>400-665-0371</span></p>
+			<p>（甲方、乙方、丙方、丁方、戊方一下统称为“各方”，“一方”指他们当中任何一方）</p>
+		</div>
+		<button onclick="printme();">打印</button>
+
+		<script type="text/javascript">
+			var global_Html = "";
+			function printme() {
+				global_Html = document.body.innerHTML;
+				document.body.innerHTML = document.getElementById('divPrint').innerHTML;　　　　　　　　　　　　　　
+				window.print();
+				window.setTimeout(function() {
+					document.body.innerHTML = global_Html;
+				}, 1500);
+			}
+		</script>
+	</body>
+
+</html>
