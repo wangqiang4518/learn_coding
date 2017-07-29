@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	/*
+	   1.函数污染介绍2.函数封装到对象；3.通过原型将函数封装到对象；4.链式调用的写法
+	*/
+		//1.函数名重复，造成污染
+		console.log('1.函数名重复，造成污染');
+		function checkName(){
+			console.log('函数名重复，造成污染checkName');
+		}
+		function checkEmail () {
+			console.log('函数名重复，造成污染checkEmail');
+		}
+		function checkName(){
+			console.log('函数名重复，造成污染checkName1');
+		}
+		function checkEmail () {
+			console.log('函数名重复，造成污染checkEmail1');
+		}
+		checkName();
+		checkEmail();
+		debugger;
+
+		//2.将函数封装到类中,每个实例都有自己的方法
+		console.log('2.将函数封装到类中');
+		var CheckObject = function(){
+			this.checkName = function(){
+				console.log('将函数封装到类中checkName');
+			}
+			this.checkEmail = function(){
+				console.log('将函数封装到类中checkEmail');
+			}
+		}
+		var test1 = new CheckObject();
+		var test2 = new CheckObject();
+		test1.checkName();
+		test1.checkEmail();
+		debugger;
+
+		//3.将函数封装到类中,所有实例公用原型方法
+		console.log('3.将函数封装到类中,所有实例公用原型方法');
+		var CheckObject1 = function(){};
+		CheckObject1.prototype.checkName = function(){
+			console.log('将函数封装到类中,所有实例公用原型方法checkName');
+		}
+		CheckObject1.prototype.checkEmail = function(){
+			console.log('将函数封装到类中,所有实例公用原型方法checkEmail');
+		}
+		var test3 = new CheckObject1();
+		var test4 = new CheckObject1();
+		test3.checkName();
+		test3.checkEmail();
+		debugger;
+
+		//4.链式调用的实现
+		console.log('4.链式调用的实现');
+		var CheckObject2 = function(){};
+		CheckObject2.prototype.checkName = function(){
+			console.log('将函数封装到类中,所有实例公用原型方法checkName');
+			return this;
+		}
+		CheckObject2.prototype.checkEmail = function(){
+			console.log('将函数封装到类中,所有实例公用原型方法checkEmail');
+			return this;
+		}
+		var test5 = new CheckObject2();
+		test5.checkName().checkEmail();
+		debugger;
+
+	</script>
+</head>
+<body>
+	<h1>验证函数重名，将函数封装到对象中</h1>
+</body>
+</html>
