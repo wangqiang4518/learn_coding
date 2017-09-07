@@ -13,17 +13,41 @@
     <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
       .lianjie{
-        display: inline-block;
-        text-indent: 20px;
+        display: block;
       }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <!-- Bootstrap -->
-      <h1>Bootstrap实例</h1>
-      <a href="bootstrap_helloWorld.html" target="_blank" class="lianjie">helloWorld</a>
+      <h1>代码实例</h1>
+      <!-- 根 -->
+      <div class="panel-group" id="root">
+        <!-- 第一个栏目 -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+             <a class="panel-title" data-toggle="collapse" data-parent="#root" href="#Bootstrap">1.Bootstrap实例</a>
+          </div>
+          <div id="Bootstrap" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <a href="bootstrap_helloWorld.html" target="_blank" class="lianjie">1.1 helloWorld</a>
+              <a href="bootstrap_helloWorld.html" target="_blank" class="lianjie">1.2 helloWorld</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+             <a class="panel-title" data-toggle="collapse" data-parent="#root" href="#panel-element-127970">Collapsible Group Item #2</a>
+          </div>
+          <div id="panel-element-127970" class="panel-collapse collapse">
+            <div class="panel-body">
+              Anim pariatur cliche...
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <!-- Bootstrap core JavaScript
