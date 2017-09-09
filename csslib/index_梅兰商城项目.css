@@ -1,0 +1,57 @@
+@charset "utf-8";
+html{
+	font:12px '宋体';
+}
+a{
+	color:#000;
+}
+.top{
+	background-color: #f7f7f7;
+	height: 26px;
+	border-bottom: 1px solid #d8d8d8;
+}
+.top_page{
+	width:970px;
+	height: 26px;
+	margin: 0 auto;
+}
+.top_page_l{
+	/*垂直居中*/
+	line-height: 26px;
+}
+.top_page_r ul li{
+	float: left;
+	padding-right: 10px;
+	line-height: 26px;
+}
+.top_page_r ul li s{
+	display: inline-block;
+	/*使得两个inline元素居中对齐*/
+	vertical-align: middle;
+	/*调用雪碧图*/
+	width: 14px;
+	height: 12px;
+	background: url(../img/img_sprite_梅兰商城项目.png);
+	background-position: -205px -27px;
+
+}
+.logo{
+	width: 970px;
+	height: 98px;
+	margin: 0 auto;
+}
+.logo_l{
+	margin:24px 0 19px 9px;
+	height: 55px;
+	width: 200px;
+	background: url(../img/img_sprite_梅兰商城项目.png);
+	background-position: 0px 0px;
+	/*屏幕向左1000*/
+	text-indent: -1000px;
+}
+.logo_r{
+	width: 530px;
+	height:42px;
+	margin: auto 0;
+	background-color: pink;
+}

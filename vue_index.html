@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>vue_index</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+	<div id="app">
+		{{ message }}
+	</div>
+
+	<!-- v-bind 属性被称为指令 用于将title和message绑定 绑定 DOM 元素属性 -->
+	<div id="app-2">
+		<span v-bind:title="message">
+	    	鼠标悬停此处几秒，
+	    	可以看到此处动态绑定的 title！
+		</span>
+	</div>
+	<!-- 将数据绑定到 DOM 结构 -->
+	<div id="app-3">
+		<p v-if="seen">现在你可以看到我</p>
+	</div>
+
+	<!-- 使用数组中的数据来展示一个项目列表 -->
+	<div id="app-4">
+	  <ol>
+
+	    <li v-for="todo in todos">
+	      {{ todo.text }}
+	    </li>
+	  </ol>
+	</div>
+
+	<!-- 增加监听 -->
+	<div id="app-5">
+	  <p>{{ message }}</p>
+	  <button v-on:click="reverseMessage">翻转 message</button>
+	</div>
+
+	<ol>
+	  <!-- 创建一个 todo-item 组件的实例 -->
+	  <todo-item></todo-item>
+	</ol>
+
+		<script type="text/javascript">
+		var app = new Vue({
+		  el: '#app',
+		  data: {
+		    message: 'Hello Vue!'
+		  }
+		});
+
+		var app2 = new Vue({
+		  el: '#app-2',
+		  data: {
+		    message: '页面加载于 ' + new Date().toLocaleString()
+		  }
+		});
+
+		var app3 = new Vue({
+		  el: '#app-3',
+		  data: {
+		    seen: true
+		  }
+		})
+
+
+		var app4 = new Vue({
+		  el: '#app-4',
+		  data: {
+		    todos: [
+		      { text: '学习 JavaScript' },
+		      { text: '学习 Vue' },
+		      { text: '创建激动人心的代码' }
+		    ]
+		  }
+		})
+
+		var app5 = new Vue({
+		  el: '#app-5',
+		  data: {
+		    message: 'Hello Vue.js!'
+		  },
+		  methods: {
+		    reverseMessage: function () {
+		      this.message = this.message.split('').reverse().join('')
+		    }
+		  }
+		})
+
+		// 定义一个被命名为 todo-item 的新组件
+		Vue.component('todo-item', {
+		  template: '<li>这是一个 todo 项</li>'
+		})
+	</script>
+</body>
+</html>
