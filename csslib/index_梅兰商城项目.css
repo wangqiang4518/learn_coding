@@ -93,3 +93,50 @@ a{
 .nav ul li:hover a{
 	color: white;
 }
+.banner{
+	width: 970px;
+	height: 210px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+.subNav{
+	width: 200px;
+	height: inherit;
+	margin-right: 11px;
+}
+.ad{
+	width: 520px;
+	height: inherit;
+}
+.message{
+	width: 230px;
+	height: inherit;
+}
+.subNav ul{
+	background-color: #e5eef2;
+}
+.subNav h2{
+	padding-left: 20px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	background-color: #0266a3;
+}
+.subNav s{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background:url(../img/img_sprite_梅兰商城subNav.png);
+	background-position: 0px 0px;
+	vertical-align: middle;
+}
+.subNav li{
+	font-size: 14px;
+	padding-top: 9px;
+	margin-left: 9px;
+}
+.subNav li a{
+	padding-left: 15px;
+}
