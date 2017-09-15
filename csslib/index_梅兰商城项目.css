@@ -107,6 +107,7 @@ a{
 .ad{
 	width: 520px;
 	height: inherit;
+	background-color: pink;
 }
 .message{
 	width: 230px;
@@ -114,6 +115,7 @@ a{
 }
 .subNav ul{
 	background-color: #e5eef2;
+	height: 180px;
 }
 .subNav h2{
 	padding-left: 20px;
@@ -134,9 +136,173 @@ a{
 }
 .subNav li{
 	font-size: 14px;
-	padding-top: 9px;
+	padding-top: 10px;
 	margin-left: 9px;
 }
 .subNav li a{
 	padding-left: 15px;
+}
+.message_top{
+	height: 95px;
+	border:1px solid #DDDDDD;
+	background-color: #f7faff;
+	margin-bottom: 21px;
+}
+.message_top .fw{
+	font-weight: bold;
+	padding:7px 0 20px 8px;
+}
+.message_top .img1{
+	display: inline-block;
+	margin:0 0 0 7px;
+}
+.message_top .cheap{
+	float: left;
+	padding: 2px 0 0 5px;
+	width: 170px;
+	letter-spacing: 1px;
+}
+.message_bottom{
+	height: 92px;
+	background-color: #f7f7f7;
+}
+
+.material{
+	width: 970px;
+	height: 34px;
+	border-top:2px solid #c3d7e4;
+	margin:0 auto;
+	margin-top: 20px;
+	line-height: 34px;
+	background-color: #e5eef3;
+	font-weight: bold;
+	font-size: 14px;
+	/*文本缩进，不用padding，防止div变宽*/
+	text-indent: 20px;
+}
+
+.product{
+	width: 970px;
+	height: 345px;
+	margin: 0 auto;
+	margin-top: 12px;
+	margin-bottom: 10px;
+}
+
+/*左侧建筑材料*/
+.product .product_l{
+	width: 730px;
+	height: inherit;
+	border:1px solid #d8d8d8;
+}
+.product .product_l .product_l_top{
+	height: 155px;
+	width: 712px;
+	padding:17px 0 0 26px;
+}
+.product_l_top .product_l_top_product1{
+	width: 350px;
+	height: 146px;
+}
+.product_l_top_product1 .buy{
+	width: 99px;
+	height: 143px;
+}
+.product_l_top_product1 .buy .img{
+	border:1px solid #cacaca;
+	height: 100px;
+	background: url(../img/product01.png);
+	background-repeat: no-repeat;
+}
+.product_l_top_product1 .buy .btn{
+	width: 99px;
+	height: 26px;
+	background-color: #0a84e3;
+	color: white;
+	margin-top: 15px;
+}
+.product_l_top_product1 .explain{
+	width: 250px;
+	height: 143px;
+}
+.product_l_top_product1 .explain .goodWife{
+	font-size: 14px;
+	padding:10px 0 0 10px;
+}
+.product_l_top_product1 .explain .auto{
+	color: #863e01;
+	padding:13px 0 0 15px;
+}
+.product_l_top_product1 .explain .money{
+	padding:23px 0 0 11px;
+}
+.product_l_top_product1 .explain .money span{
+	color: red;
+}
+.product_l_top_product1 .explain .money s{
+	text-decoration: line-through;
+}
+.product_l_top_product1 .explain .buyed{
+	font-size: 14px;
+	padding: 28px 0 0 11px;
+}
+
+/*中间间隔线*/
+.product_l_line{
+	margin:0 4px;
+	border-top: 1px solid #cccccc;
+}
+
+/*右侧建材资讯样式*/
+.product .product_r{
+	width: 220px;
+	height: inherit;
+	border:1px solid #ccc;
+}
+.product_r h2{
+	font-size: 16px;
+	height: 28px;
+	line-height: 28px;
+	padding-left: 15px;
+	border-bottom: 1px solid #cccccc;
+}
+.product_r ul{
+	padding-top: 11px;
+}
+.product_r li {
+	line-height: 23px;
+	padding-left: 11px;
+}
+
+.div{
+	width: 970px;
+	height: 345px;
+	margin: 0 auto;
+	margin-top: 12px;
+	background-color: blue;
+}
+
+/*友情链接*/
+.link{
+	width: 970px;
+	height: 40px;
+	margin:0 auto;
+	border-top: 1px solid #dddddd;
+	border-bottom: 3px solid #0a7ec3;
+	color:#666;
+	padding-top: 15px;
+}
+.link .link_content{
+	padding: 0 3px;
+}
+
+.aboutMe{
+	height: 91px;
+	width: 970px;
+	margin:0 auto;
+}
+.aboutMe p{
+	margin-top: 14px;
+	/*单行水平居中*/
+	text-align: center;
 }
