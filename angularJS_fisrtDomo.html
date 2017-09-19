@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 建议放在body最后方，速度快；此处放在最后报错？ -->
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script> 
+</head>
+<body>
+	<!-- ng-app指令定义了应用, ng-controller 定义了控制器（js中用） -->
+	<div ng-app="myApp" ng-controller="myCtrl">
+	 
+		名: <input type="text" ng-model="firstName"><br>
+		姓: <input type="text" ng-model="lastName"><br>
+		<br>
+		<!-- 表达式放在双括号中 -->
+		姓名: {{firstName + " " + lastName}}
+	 
+	</div>
+	 
+	<script>
+		// 模块定义
+		var app = angular.module('myApp', []);
+		// 控制器控制应用
+		app.controller('myCtrl', function($scope) {
+		    $scope.firstName= "John";
+		    $scope.lastName= "Doe";
+		});
+	</script>
+</body>
+</html>
