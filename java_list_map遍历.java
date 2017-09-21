@@ -15,7 +15,8 @@ public class java_list_map遍历{
      list.add("Hello");
      list.add("World");
      list.add("HAHAHAHA");
-     
+     String ssString = list.toString().toString();
+     System.out.println(ssString);
      //第一种遍历方法使用foreach遍历List
      for (String str : list) {            //也可以改写for(int i=0;i<list.size();i++)这种形式
         System.out.println(str);

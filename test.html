@@ -4,53 +4,14 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-    *{margin: 0;padding: 0;}
-    .main{
-        width: 400px;
-        height: 400px;
-        background: pink;
-        /*border: 1px solid #ccc;*/
-        /*padding: 1px 0;*/
-    }
-    .header1{
-        width: 150px;
-        height: 150px;
-        background-color: red;
-        margin-top:10px;
-    }
-    .header2{
-        width: 150px;
-        height: 150px;
-        background-color: blue;
-    }
 
-    .div1{
-        width: 150px;
-        height: 150px;
-        background-color: red;
-        margin-bottom:20px;
-    }
-    .div2{
-        width: 150px;
-        height: 150px;
-        background-color: blue;
-        margin-top: 10px;
-    }
     </style>
 </head>
 <body>
-	<!-- 父子块元素塌陷现象  -->
-	<!-- 本来希望header1距离main顶部10px，但是是header1和main一起出现margin-top10px -->
-	<!-- 给父元素增加上下boder或者上下padding -->
-	<div class="main">
-		<div class="header1"></div>
-		<div class="header2"></div>
-	</div>
-
-	<h1>------------</h1>
-	<!-- 兄弟块元素塌陷现象 -->
-	<div class="div1"></div>
-	<div class="div2"></div>
+    <div style="height: 100px;background-color: blue;">
+        <div style="height:inherit;float:left;width:45%;background-color: red;"></div>
+        <div style="height:inherit;float:right;width:45%;background-color:pink;"></div>
+    </div>
     
 </body>
 </html>
