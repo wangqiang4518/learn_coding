@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .clearfix:after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+        .clearfix{
+            *zoom:1; /*兼容ie低版本*/
+        }
+    </style>
+</head>
+<body>
+    <h2>浮动float：脱离文档流(飘起来了)</h2>
+    <p>w3c介绍：浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止</p>
+    <p>初衷是为了文字环绕，后被用来布局（共享一行）</p>
+    <div id="outerDiv" style="background-color: #f7f7f7;width: 200px;">
+        <div id="innerDiv" style="float: left;background-color: red;height: 40px;">innerDiv包裹性测试</div>float初衷是为了实现文字的环绕效果
+    </div>
+    <p>float特性：1.纵向塌陷，父元素高度变化。<br>如上，外层div根据内容而变化，无内容则无高度；如果不造成塌陷，则文字会在内部div右下方展示</p>
+    <p>float特性：2.横向包裹，将自身宽度自动设置为内容宽度 。<br>如上，innerDiv的宽度会根据内容变化而变化；如果不具备该特征，则div宽度会撑满父元素</p>
+    <p>float特性：3.清除空格</p>
+    <h2>清除浮动</h2>
+    <p>1.父元素添加overflow:hidden</p>
+    <div id="outerDiv" style="background-color: #f7f7f7;width: 200px;border: 1px solid;overflow: hidden;">
+        <div id="innerDiv" style="float: left;background-color: red;height: 40px;width:40px;"></div>ajkd v
+    </div>    
+    <p>2.clear:both通过在所有浮动元素下方添加一个clear:both的元素</p>
+    <div id="outerDiv" style="background-color: #f7f7f7;width: 200px;border: 1px solid;">
+        <div id="innerDiv" style="float: left;background-color: red;height: 40px;width:40px;"></div>ajkd v
+        <div style="clear:both;"></div>
+    </div>    
+    <p>3.伪类方式。原理就是在父div的最后加一个clear:both的元素</p>
+    <div id="outerDiv" class="clearfix" style="background-color: #f7f7f7;width: 200px;border: 1px solid;">
+        <div id="innerDiv" style="float: left;background-color: red;height: 40px;width:40px;"></div>ajkd v
+    </div>
+    <p>不清除浮动效果</p>
+    <div id="outerDiv" style="background-color: #f7f7f7;width: 200px;border: 1px solid;">
+        <div id="innerDiv" style="float: left;background-color: red;height: 40px;width:40px;"></div>ajkd v
+    </div>
+</body>
+</html>
