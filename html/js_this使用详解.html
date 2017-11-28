@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //this对象是指在运行时期基于执行环境所绑定的；
+        //this总是指向调用者
+        debugger;
+		var User = {
+			count: 1,
+			getCount: function() {
+				return this.count;
+			}
+		};
+		console.log(User.getCount());	//输出1
+		var func = User.getCount;
+		console.log(func());			//输出undefined
+		var func1 = User.getCount.bind(User);
+		console.log(func1());		//输出1，保证输出为user中变量的方法
+
+		debugger;
+		var fullname = 'John Doe';
+		var obj = {
+			fullname: 'Colin Ihrig',
+			prop: {
+				fullname: 'Aurelio De Rosa',
+				getFullname: function() {
+					return this.fullname;
+				}
+			}
+		};
+		console.log(obj.prop.getFullname());  // Aurelio De Rosa
+		var test = obj.prop.getFullname;
+		console.log(test()); // John Doe
+    </script>
+</head>
+<body>
+	<h1>使用谷歌浏览器打开，进入调试模式查看</h1>
+</body>
+</html>
+
+
+
