@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<html>  
+<head>  
+<title>position</title>  
+</head>  
+<body>  
+	<h4>position一共有四个可选属性：static/relative/absolute/fixed。其中static（静态定位）是默认值</h4>
+	<h4>一、relative(没有脱离文档流)</h4>
+	<h5>1.relative会导致自身位置的相对变化，而不会影响其他元素的位置、大小的变化</h5>
+	<p>第一行元素</p>
+	<p>第二行元素</p>
+	<p style="position: relative;top: 5px;left: 5px;">第三行元素，向右，向下移动3px</p>
+	<p>第四行元素</p>
+
+	<h6>2.relative产生一个新的定位上下文(子元素如果为absulute，以该位置为基准)</h6>
+	<div style="position:relative;height: 100px;margin-top: 10px;border: 1px solid red;">
+		<div style="position: absolute;top: 20px;left: 20px;color: red;">子元素内容，找到第一个定位为relative或者absolute父元素作为基准位置</div>
+		元素内容。。。。。<br>
+		元素内容。。。。。<br>
+		元素内容。。。。。<br>
+	</div>
+
+	<h4>二、absolute(脱离文档流)</h4>
+	<p>脱离文档流，具有破坏性（其他元素变化） 1.包裹性2.跟随性（原位置不变）？3.漂浮在上方，遮挡下方</p>
+	<p>第一行元素</p>
+	<p>第二行元素</p>
+	<p style="position: absolute;background-color: yellow;">第三行元素，可以去掉position试试;注意top和left以离他最近的上下文位置为基准；</p>
+	<p>第四行元素</p>
+
+	<h4>三、fixed</h4>
+	<p>和absolute一样，不过他的top和left等以浏览器位置为基准，无论滚轮怎么滚，元素不动</p>
+	<p style="position: fixed;background-color: yellow;color: red;font-size: 22px;top:100px;left:100px;">fixed元素</p>
+
+</body>  
+</html> 
+</html>
